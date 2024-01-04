@@ -1,0 +1,136 @@
+.container-two {
+  background-color: #fff;
+  color: $color-primary-grey;
+  font-family: $font-family;
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 3rem;
+
+    @media screen and (max-width: 610px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    .grid-item {
+      height: 29rem;
+      border-radius: 1rem;
+
+      p {
+        width: 30%;
+      }
+
+      &:hover {
+        .project__hover {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    // linear-gradient(to right bottom, rgba(126, 213, 111, 0.3), rgba(40, 180, 133, .3)),
+
+    &__item1 {
+      background-image: url("../../Image/book-tracker.png");
+      opacity: 0.8;
+
+      background-size: cover;
+    }
+    &__item2 {
+      background-image: url("../../Image/amazon-clone.png");
+      opacity: 0.8;
+      background-size: cover;
+    }
+    &__item3 {
+      background-image: url("../../Image/food-order.png");
+      opacity: 0.8;
+      background-size: cover;
+    }
+    &__item4 {
+      background-image: url("../../Image/disneyPlus-clone.png");
+      opacity: 0.8;
+      background-size: cover;
+    }
+    &__item5 {
+      background-image: url("../../Image/na-tour.png");
+      opacity: 0.8;
+      background-size: cover;
+    }
+    &__item6 {
+      background-image: url("../../Image/nexter-grid.png");
+      opacity: 0.8;
+      background-size: contain;
+    }
+
+    .project__hover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      border-radius: inherit;
+
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(96, 183, 81, 0.85),
+        rgba(40, 180, 133, 0.85)
+      );
+
+      h3 {
+        font-size: 2.4rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .project__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // height: 100%;
+
+        a {
+          &:link,
+          &:visited {
+            svg {
+              width: 5rem;
+              height: 5rem;
+              fill: #d8d5d5;
+              margin-right: 1rem;
+            }
+          }
+
+          &:hover,
+          &:active {
+            transform: translateY(-0.3rem);
+            svg {
+              fill: $color-primary-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-items {
+  width: 100%;
+  height: 100%;
+  padding: 8rem 7rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 5rem 1.5rem;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 4.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}

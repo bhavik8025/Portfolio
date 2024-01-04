@@ -1,0 +1,60 @@
+.container-five {
+  background-color: $color-primary-green;
+  color: $white-color;
+  font-family: $font-family;
+
+  .education {
+    margin-bottom: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      font-size: 2.5rem;
+      // font-weight: 500;
+      line-height: 1;
+
+      @media screen and (max-width: 610px) {
+        font-size: 2rem;
+      }
+
+      h3{
+        color: $color-grey-light-3;
+        font-weight: 600;
+      }
+
+      span {
+        color: $color-grey-light-1;
+        // font-size: 1.5rem;
+        font-weight: 100;
+        margin-left: 1rem;
+
+        @media screen and (max-width: 610px) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__parent-board {
+      font-size: 2rem;
+      line-height: 1.6;
+    }
+
+    &__duration {
+      color: $color-grey-light-1;
+      font-size: 1.5rem;
+      //   margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    &__score {
+      font-size: 1.5rem;
+      //   margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+  }
+}

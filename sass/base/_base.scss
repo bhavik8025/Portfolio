@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+
+  display: grid;
+  grid-template-rows: 100vh repeat(5,min-content);
+}

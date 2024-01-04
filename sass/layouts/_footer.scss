@@ -1,0 +1,108 @@
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: $color-primary-grey;
+  color: $color-primary-green;
+  // padding: 3rem;
+  font-family: "Montserrat", sans-serif;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 3rem;
+
+  @media screen and (max-width: 610px) {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .platforms {
+    // background-color: red;
+    &__links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        margin: 0 1rem;
+
+        @media screen and (max-width: 610px) {
+          margin: 0 0.7rem;
+        }
+      }
+
+      button {
+        // background-color: #d7d6d6;
+        border: 1px solid #fff;
+        border-radius: .4rem;
+        padding: .2rem;
+
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          // background-color: #faf9fa;
+          border-color: #f8f9fa;
+          opacity: .5;
+        }
+
+        @media screen and (max-width: 610px) {
+          padding: 0.6rem;
+        }
+      }
+
+      svg {
+        width: 3.5rem;
+        height: 3.5rem;
+        // margin-right: 1rem;
+        // stroke: rgb(57, 85, 45);
+
+        @media  screen and (max-width: 610px) {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .contact {
+    &__details {
+      display: flex;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .vip {
+        display: flex;
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 1rem;
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+          margin-right: 1rem;
+          fill: #fff;
+        }
+
+        span {
+          font-size: 2rem;
+        }
+      }
+
+      &-email {
+      }
+
+      &-phone {
+        align-self: flex-start;
+      }
+    }
+  }
+}

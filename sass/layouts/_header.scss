@@ -1,0 +1,156 @@
+.mainNav {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  height: 10.5rem;
+
+  color: $white-color;
+  background-color: $color-primary-grey;
+
+  display: flex;
+  align-items: center;
+  padding: 0 5rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    height: 7.5rem;
+  }
+
+  .nav-actions {
+    font-size: 1.6rem;
+    transition: all 0.15s ease-in-out;
+    display: flex;
+    list-style: none;
+
+    transition: all 0.5s;
+
+    li {
+      padding: 1.6rem;
+      a {
+        &:link,
+        &:visited {
+          color: $white-color;
+          text-decoration: none;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: #16a98c;
+          cursor: pointer;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      background-color: $color-primary-grey;
+      position: absolute;
+      top: 4.8rem;
+      left: 0;
+      width: 100%;
+      height: 50vh;
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 2rem;
+
+      // display: none;
+      // make it visully hidden
+      opacity: 0;
+      // make it non-accessible
+      pointer-events: none;
+      // Hide it from screen readers
+      visibility: hidden;
+      transform: translateX(0);
+
+      &.nav-open {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(5);
+      }
+
+      &.nav-open ~ .btn-mobile-nav span {
+        background-color: transparent;
+
+        &::after {
+          top: 0;
+          transform: rotate(135deg);
+        }
+
+        &::before {
+          top: 0;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  // mobile navigations
+  .btn-mobile-nav {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    display: none;
+
+    span {
+      &::after,
+      &::before {
+        position: absolute;
+        right: 0;
+        content: "";
+        transition: all 0.2s;
+      }
+      &::after {
+        top: 1rem;
+      }
+      &::before {
+        top: -1rem;
+      }
+      &,
+      &::after,
+      &::before {
+        display: block;
+        height: 2px;
+        width: 3rem;
+        margin-bottom: 0.5rem;
+        background-color: $white-color;
+      }
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 610px) {
+    height: 7.5rem;
+
+    &.scrolled {
+      height: 5rem;
+    }
+  }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.nav-link {
+  font-size: 3.2rem;
+  line-height: 1.5;
+  margin-right: auto;
+
+  a {
+    color: $white-color;
+    text-decoration: none;
+  }
+}
